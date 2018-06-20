@@ -1,0 +1,31 @@
+USE [SIGSALUD]
+GO
+
+/****** Object:  StoredProcedure [dbo].[SP_GET_CONSULTORIO_21_OBS]    Script Date: 04/27/2016 09:48:12 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+CREATE PROCEDURE [dbo].[SP_GET_CONSULTORIO_21_OBS]
+AS BEGIN
+
+/* @MODULO: Emergencia
+ *
+ */
+
+SELECT
+consultorio,
+SUBSTRING(nombre, 1, CHARINDEX(' ', nombre)) nombre
+FROM CONSULTORIO
+WHERE TIPO = 'E' and CONSULTORIO IN ('4050', '4060')
+
+END
+
+
+GO
+
+

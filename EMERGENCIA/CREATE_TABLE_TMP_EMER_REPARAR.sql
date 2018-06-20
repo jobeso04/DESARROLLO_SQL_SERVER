@@ -1,0 +1,32 @@
+USE [SIGSALUD]
+GO
+
+/****** Object:  Table [dbo].[TMP_EMER_REPARAR]    Script Date: 10/27/2016 11:36:34 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TMP_EMER_REPARAR](
+	[EMERGENCIA_ID] [char](8) NOT NULL,
+	[FECHA] [datetime] NULL,
+	[NOMBRES] [varchar](100) NULL,
+	[ESTADO] [char](1) NULL,
+	[PACIENTE] [char](10) NULL,
+	[HISTORIA] [char](20) NULL,
+	[NOMBRE_SEGURO] [varchar](50) NULL,
+	[NOMBRE_CONSULTORIO] [varchar](50) NULL,
+	[OBSERVACION1] [varchar](200) NULL,
+	[NOMBRE_MEDICO] [varchar](250) NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

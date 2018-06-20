@@ -1,0 +1,116 @@
+1. AGREGAR CAMPOS EN TABLA RAYOSX
+
+2. ACTUALIZAR LAS VISTAS, AGREGAR : 
+A.DB8_10, A.DB14_17, A.DB14_14, A.DB10_12, A.DB11_14, A.DB24_30,A.DM8_10, A.DM14_17, A.DM14_14,A.DM10_12,A.DM11_14, A.DM24_30
+
+3. CREAR_PROCEDIMIENTO_ALMACENADO_PLACAS_DIGITALES
+
+
+
+Call to a member function rowCount() on a non-object in 
+
+
+GUARDA R ESTE CODIGO :
+
+***************
+
+            <?php 
+			if($this->placas_digitales->rowCount()):
+			
+			while($row = $this->placas_digitales_totales->fetch(PDO::FETCH_OBJ)): ?>
+            <tr>
+            	<td><?php echo substr($row->PELICULAST,0,2) == 'TO' ? '<b>'.utf8_encode($row->PELICULAST).'</b>' : utf8_encode($row->PELICULAST)  ?></td>
+            	<td><?php echo $row->TOTALT ?></td>
+            	<td><?php echo $row->DB8_10 ?></td>
+            	<td><?php echo $row->DB14_17 ?></td>
+            	<td><?php echo $row->DB14_14 ?></td>
+            	<td><?php echo $row->DB10_12 ?></td>
+            	<td><?php echo $row->DB11_14 ?></td>
+            	<td><?php echo $row->DB24_30 ?></td>                
+            </tr>
+            <?php endwhile; 
+			else:?>
+			<tr>
+            	<td><b>TOTAL</b></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>                
+            </tr>            
+            <?php endif; ?>
+ 			</tbody>
+        </table>
+
+    	<h2>Pel&iacute;culas Radiogr&aacute;ficas - DIGITALES - 
+        
+        <?php 
+			switch($this->seguro){
+				case 14:
+					echo 'EXONERADO';
+					break;
+				case 0;
+					echo 'PAGANTE';
+					break;
+				case 01:
+					echo 'SIS SUBDIADO';
+					break;
+				case 02:
+					echo 'SOAT';
+					break;
+				case 05:
+					echo 'PENDIENTE DE PAGO';
+					break;
+			}
+		?>        
+        
+        <br /><span> del &nbsp; <?php echo $this->inicio ?> &nbsp; al &nbsp; <?php echo $this->fin ?></span></h2>
+    
+        <table class="tbRayosCuadro2">
+        	<thead>
+            <tr>
+            	<th>Servicio Rayos X</th>
+                <th>Total</th>
+                <th>8 x 10</th>
+                <th>14 x 17</th>
+            	<th>14 x 14</th>
+                <th>10 x 12</th>
+                <th>11 x 14</th>
+                <th>24 x 30</th>                
+            </tr>
+            </thead>
+            <tbody>
+            <?php 
+			if($this->placas_digitales->rowCount()  == 1):
+			while($row = $this->PlacasDigitales_Seguro->fetch(PDO::FETCH_OBJ)): ?>
+            <tr>
+            	<td><?php echo substr($row->PELICULASD,0,2) == 'TO' ? '<b>'.utf8_encode($row->PELICULASD).'</b>' : utf8_encode($row->PELICULASD)  ?></td>
+            	<td><?php echo $row->TOTALD ?></td>
+            	<td><?php echo $row->DB8_10 ?></td>
+            	<td><?php echo $row->DB14_17 ?></td>
+            	<td><?php echo $row->DB14_14 ?></td>
+            	<td><?php echo $row->DB10_12 ?></td>
+            	<td><?php echo $row->DB11_14 ?></td>
+            	<td><?php echo $row->DB24_30 ?></td>
+            </tr>
+            <?php endwhile; 
+			else:?>
+			<tr>
+            	<td><b>TOTAL</b></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>                
+            </tr>            
+            <?php endif; ?>
+
+
+
+
+
+

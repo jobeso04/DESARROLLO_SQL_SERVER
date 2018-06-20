@@ -1,0 +1,11 @@
+
+
+select * from [SIGSALUD].[dbo].[ORDENC] where ORDENID = '1716076139'
+update [SIGSALUD].[dbo].[ORDENC] set medico = 'CVD' where ORDENID = '1716076139'
+
+
+ SELECT [MEDICO],[NOMBRE] FROM [SIGSALUD].[dbo].[MEDICO] order by NOMBRE 
+ 
+ UPDATE [SIGSALUD].[dbo].[MEDICO] SET NOMBRE = 'DIONICIO ELERA ROSA BEATRIZ'  WHERE MEDICO = 'DER'
+ 
+ 

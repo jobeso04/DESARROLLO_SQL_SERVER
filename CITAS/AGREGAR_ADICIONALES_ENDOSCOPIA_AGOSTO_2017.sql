@@ -1,0 +1,43 @@
+INSERT INTO [SIGSALUD].[dbo].[ROLACTIVIDAD]
+           ([PERIODO]
+           ,[SERVICIO]
+           ,[CONSULTORIO]
+           ,[TURNO_CONSULTA]
+           ,[D01]
+           ,[D02]
+           ,[D03]
+           ,[D04]
+           ,[D05]
+           ,[D06]
+           ,[D07]
+           ,[D08]
+           ,[D09]
+           ,[D10]
+           ,[D11]
+           ,[D12]
+           ,[D13]
+           ,[D14]
+           ,[D15]
+           ,[D16]
+           ,[D17]
+           ,[D18]
+           ,[D19]
+           ,[D20]
+           ,[D21]
+           ,[D22]
+           ,[D23]
+           ,[D24]
+           ,[D25]
+           ,[D26]
+           ,[D27]
+           ,[D28]
+           ,[D29]
+           ,[D30]
+           ,[D31])
+                      
+SELECT [PERIODO],[SERVICIO],'1099' [CONSULTORIO],[TURNO_CONSULTA],[D01],[D02],[D03],[D04],[D05],[D06],[D07],[D08],[D09],[D10],[D11],[D12],[D13],[D14],[D15],[D16],[D17],
+   'HCM' [D18],[D19],[D20],[D21],[D22],[D23],[D24], 'HCM' [D25],[D26],[D27],[D28],[D29],[D30], '' [D31]
+  FROM [SIGSALUD].[dbo].[ROLACTIVIDAD]  WHERE PERIODO = '201708' AND SERVICIO = '10' AND CONSULTORIO = '1016' AND TURNO_CONSULTA NOT IN ('I', 'N')
+             
+
+SELECT * FROM [SIGSALUD].[dbo].[ROLACTIVIDAD]  WHERE PERIODO = '201708' AND SERVICIO = '10' AND CONSULTORIO = '1016' AND TURNO_CONSULTA NOT IN ('I', 'N')

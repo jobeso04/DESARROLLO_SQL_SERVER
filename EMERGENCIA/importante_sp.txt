@@ -1,0 +1,5 @@
+en procedimientos almacenados, agregar :
+
+debajo del begin
+
+SET NOCOUNT ON

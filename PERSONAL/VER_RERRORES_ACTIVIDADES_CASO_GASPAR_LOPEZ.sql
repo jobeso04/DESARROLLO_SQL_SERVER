@@ -1,0 +1,205 @@
+
+use bdpersonal
+
+
+
+INSERT INTO ACTIVIDAD_DETALLE 
+values ('1', '084414', 2, 8, 2017, 1, 'M', 3)
+
+				
+
+     VALUES 
+           (<ID_ACTIVIDAD, int,>
+           ,<CODIGO, nvarchar(6),>
+           ,<DIA, real,>
+           ,<MES, real,>
+           ,<ANIO, real,>
+           ,<ESTADO, char(1),>
+           ,<TURNO, varchar(2),>
+           ,<HORAS, numeric(8,0),>)
+
+
+select * from 
+
+/pdf.jsp?f_mes=06&f_unidad=46&f_anio=2017&f_id_personal=07654933
+
+06&f_unidad=46&f_anio=2017&f_id_personal=07654933
+
+
+use bdpersonal
+EXEC SP_GET_ASISTENCIA_MAESTRO_1  46, '6', '2017'
+
+EXEC SP_GET_ASISTENCIA_MAESTRO_12 '084091', '6', '2017'
+
+SELECT	 
+		 ISNULL(( [dbo].[FN_ACTIVIDAD_ASIST_1](DIA, MES, AÑO,  CODIGO, 1) ),'  ') as EMER, 
+		 ISNULL(( [dbo].[FN_ACTIVIDAD_ASIST_1](DIA, MES, AÑO,  CODIGO, 2) ),'  ') as HOSP, 
+		 ISNULL(( [dbo].[FN_ACTIVIDAD_ASIST_1](DIA, MES, AÑO,  CODIGO, 3) ),'  ') as SOP, 
+		 ISNULL(( [dbo].[FN_ACTIVIDAD_ASIST_1](DIA, MES, AÑO,  CODIGO, 4) ),'  ') as CEM, 
+		ISNULL(( [dbo].[FN_ACTIVIDAD_ASIST_1](DIA, MES, AÑO,  CODIGO, 6) ),'  ') as ADM,
+		ISNULL(( [dbo].[FN_ACTIVIDAD_ASIST_1](DIA, MES, AÑO,  CODIGO, 39) ),'  ') as COB,
+		ISNULL(( [dbo].[FN_ACTIVIDAD_ASIST_1](DIA, MES, AÑO,  CODIGO, 40) ),'  ') as PRC,
+		ISNULL(( [dbo].[FN_ACTIVIDAD_ASIST_1](DIA, MES, AÑO,  CODIGO, 41) ),'  ') as INC,
+		ISNULL(( [dbo].[FN_ACTIVIDAD_ASIST_1](DIA, MES, AÑO,  CODIGO, 42) ),'  ') as CMT, 
+		ISNULL(( [dbo].[FN_ACTIVIDAD_ASIST_1](DIA, MES, AÑO,  CODIGO, 43) ),'  ') as CAP,
+		ISNULL(( [dbo].[FN_ACTIVIDAD_ASIST_1](DIA, MES, AÑO,  CODIGO, 44) ),'  ') as JME,
+		ISNULL(( [dbo].[FN_ACTIVIDAD_ASIST_1](DIA, MES, AÑO,  CODIGO, 45) ),'  ') as TLM,  
+		ISNULL(( [dbo].[FN_ACTIVIDAD_ASIST_1](DIA, MES, AÑO,  CODIGO, 46) ),'  ') as AUD,
+		ISNULL(( [dbo].[FN_ACTIVIDAD_ASIST_1](DIA, MES, AÑO,  CODIGO, 48) ),'  ') as REFC,
+		ISNULL(( [dbo].[FN_ACTIVIDAD_ASIST_1](DIA, MES, AÑO,  CODIGO, 49) ),'  ') as SUP  
+ FROM	ASISTENCIA
+ where	AÑO = '2017'
+   and	mes = '6'
+   and codigo = '084091'  order by dia
+   
+   
+   
+
+SELECT * FROM ASISTENCIA WHERE CODIGO = '084085' AND MES = 6 AND AÑO = 2017
+
+SELECT * FROM ACTIVIDAD_DETALLE WHERE CODIGO = '084085' AND MES = 6 AND ANIO = 2017 ORDER BY DIA ASC
+
+SELECT * FROM ACTIVIDAD_DETALLE WHERE CODIGO = '084091' AND MES = 6 AND ANIO = 2017 ORDER BY DIA ASC
+
+
+SELECT * FROM MAESTRO WHERE NOMBRE LIKE 'PEREZ%'
+
+
+   
+   
+declare @codigo varchar(13) = '084466' 
+select nombre, dni, SITUACION_laboral from v_MAESTRO a left join ACTIVIDAD_DETALLE b on b.CODIGO = a.CODIGO 
+  where a.CODIGO = @codigo and b.MES = 6 and b.ANIO = 2017
+  
+
+select * from ACTIVIDAD_DETALLE where CODIGO = '084466' and MES = 6 and ANIO = 2017 order by dia asc
+
+
+
+select * from ACTIVIDAD_DETALLE where  MES = 6 and ANIO = 2017
+
+EXEC SP_GET_ASISTENCIA_MAESTRO_12 '084085', '6', '2017'
+
+
+select * from ACTIVIDAD_DETALLE where CODIGO = '084414' order by ANIO desc
+
+
+select nombre, dni from MAESTRO  order by nombre asc where 
+
+select nombre, dni, ACTIVIDADES
+
+@DIA INT,
+		@MES REAL,
+		@ANIO REAL,
+		@CODIGO NVARCHAR(6),
+		@ID_ACT INT	
+	)
+	
+RETURNS VARCHAR(2)
+
+AS
+
+BEGIN	
+
+	DECLARE @ESTADO NUMERIC(2,0)
+	
+set @ESTADO =(SELECT case when ISNUMERIC(HORAS) = 1 then HORAS else '&nbsp;&nbsp;&nbsp;' end HORAS
+select * 
+  FROM ACTIVIDAD_DETALLE
+  where (ID_ACTIVIDAD = @ID_ACT)
+    AND	MES = @MES
+    AND	ANIO = @ANIO
+    AND	DIA = @DIA
+    AND CODIGO = @CODIGO)
+
+	RETURN @ESTADO
+
+END
+
+   
+   EXEC SP_GET_ASISTENCIA_MAESTRO_12 '084085', '6', '2017'
+EXEC SP_GET_ASISTENCIA_MAESTRO_12 '084060', '6', '2017'   
+   
+   SELECT * FROM ACTIVIDAD_DETALLE WHERE CODIGO = '084060' AND MES = 6 AND ANIO = 2017 ORDER BY DIA ASC
+   SELECT * FROM ACTIVIDAD_DETALLE WHERE CODIGO = '084085' AND MES = 6 AND ANIO = 2017 ORDER BY DIA ASC
+   
+   
+   
+   select * from MAESTRO where NOMBRE like 'ORCADA%'
+  select * from MAESTRO where NOMBRE like 'GASPAR%'   
+
+   
+DECLARE @ESTADO NUMERIC(2,0)
+set @ESTADO =(SELECT case when ISNUMERIC(HORAS) = 1 then HORAS else '&nbsp;&nbsp;&nbsp;' end HORAS
+SELECT *
+  FROM ACTIVIDAD_DETALLE
+  where (ID_ACTIVIDAD = 1)
+    AND	MES = 6
+    AND	ANIO = 2017
+    AND	DIA = 2
+    AND CODIGO =  '084085'
+
+	RETURN @ESTADO
+
+END
+   
+   
+   
+   
+SELECT ISNULL(( [dbo].[FN_ACTIVIDAD_ASIST_1](DIA, MES, AÑO,  CODIGO, 1) ),'  ') as EMER
+ 		   FROM	ASISTENCIA
+ where	AÑO = '2017'
+   and	mes = '6'
+   and codigo = '084085'  order by dia 
+   
+   
+@DIA INT,
+		@MES REAL,
+		@ANIO REAL,
+		@CODIGO NVARCHAR(6),
+		@ID_ACT INT	
+	)
+	
+RETURNS VARCHAR(2)
+
+AS
+
+BEGIN	
+
+	DECLARE @ESTADO NUMERIC(2,0)
+	
+set @ESTADO =(
+
+SELECT case when ISNUMERIC(HORAS) = 1 then HORAS else '&nbsp;&nbsp;&nbsp;' end HORAS
+  FROM ACTIVIDAD_DETALLE
+  where (ID_ACTIVIDAD = 1)
+    AND	MES = 6
+    AND	ANIO = 2017
+    AND	DIA = 2
+    AND CODIGO = '084085')
+
+	RETURN @ESTADO
+
+END
+
+
+/* SE HA REGISTRADOP POR DUPLICADO LAS HORAS EN TURNOS DIFERENTES, PORQUE NO MOSTRABA LA SELECCION DE TURNOS */
+
+
+SELECT * FROM ACTIVIDADES WHERE ACTIVO = '1'
+SELECT * FROM ACTIVIDAD_DETALLE WHERE CODIGO = '084085' AND MES = 6 AND ANIO = 2017 ORDER BY DIA ASC
+
+SELECT * FROM ACTIVIDAD_DETALLE WHERE CODIGO = '084085' AND MES = 6 AND ANIO = 2017 AND EMERORDER BY DIA ASC
+
+SELECT * FROM ACTIVIDAD_DETALLE WHERE CODIGO = '084085' AND MES = 6 AND ANIO = 2017 AND ID_ACTIVIDAD = 2 ORDER BY DIA ASC
+
+SELECT * FROM ACTIVIDAD_DETALLE WHERE CODIGO = '084091' AND MES = 6 AND ANIO = 2017  ORDER BY DIA, ID_ACTIVIDAD  ASC
+
+DELETE FROM ACTIVIDAD_DETALLE WHERE ID_ACTIVIDAD_DET IN (44692, 44693, 44694, 44713, 44847, 44851)
+
+
+
+
+
+
+   

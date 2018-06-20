@@ -1,0 +1,35 @@
+USE [SIGSALUD]
+GO
+
+/****** Object:  Table [dbo].[TABLA_AEM_2017]    Script Date: 03/22/2018 09:25:24 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TABLA_AEM_2017](
+	[CODIGO_SISMED] [varchar](50) NULL,
+	[DESCRIPCION_ITEM] [varchar](250) NULL,
+	[NRO_PPA] [varchar](50) NULL,
+	[NRO_LOTE] [varchar](50) NULL,
+	[NRO_O_C] [varchar](50) NOT NULL,
+	[NRO_CARTA_ORDEN] [varchar](50) NULL,
+	[PRECIO_COMPRA] [numeric](18, 3) NULL,
+	[PRECIO_OPERACION] [numeric](18, 3) NULL,
+	[FECHA_INGRESO_ALMACEN] [varchar](50) NULL,
+	[FECHA_VENCIMIENTO] [varchar](50) NULL,
+	[FECHA_TERMINO_STOCK] [varchar](50) NULL,
+	[FUENTE_FINANCIAMIENTO] [varchar](150) NULL,
+	[TIPO_DE_COMPRA] [varchar](50) NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

@@ -1,0 +1,48 @@
+USE [BDPERSONAL]
+GO
+
+/****** Object:  Table [dbo].[TMP_ANEXO2_PERSONAL]    Script Date: 12/14/2017 15:02:43 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TMP_ANEXO2_PERSONAL](
+	[IDANEXO2] [int] IDENTITY(1,1) NOT NULL,
+	[CODIGO] [varchar](13) NULL,
+	[NOMBRE_MEDICO] [varchar](250) NULL,
+	[CEX] [int] NULL,
+	[PRO] [int] NULL,
+	[VMH] [int] NULL,
+	[SOP] [int] NULL,
+	[COB] [int] NULL,
+	[EMG] [int] NULL,
+	[INTR] [int] NULL,
+	[JUN] [int] NULL,
+	[TEM] [int] NULL,
+	[AUD] [int] NULL,
+	[CMT] [int] NULL,
+	[RYC] [int] NULL,
+	[CAP] [int] NULL,
+	[IEC] [int] NULL,
+	[INV] [int] NULL,
+	[ADM] [int] NULL,
+	[MOR] [int] NULL,
+	[SUP] [int] NULL,
+	[TOTAL] [int] NULL,
+ CONSTRAINT [PK_TMP_ANENEXO2_PERSONAL] PRIMARY KEY CLUSTERED 
+(
+	[IDANEXO2] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

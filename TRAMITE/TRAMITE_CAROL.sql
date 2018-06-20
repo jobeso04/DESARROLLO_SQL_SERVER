@@ -1,0 +1,1 @@
+  select * from USUARIO where nombre like '%GOYA%'order by NOMBRE asc

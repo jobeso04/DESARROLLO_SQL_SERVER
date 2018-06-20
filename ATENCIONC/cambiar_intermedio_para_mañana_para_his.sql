@@ -1,0 +1,1 @@
+update ATENCIONC set TURNO_CONSULTA = 'M' where FECHA between CONVERT(datetime, '2016-10-01', 101) and CONVERT(datetime, '2016-10-31', 101) and TURNO_CONSULTA = 'I'

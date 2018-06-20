@@ -1,0 +1,2 @@
+declare @lid_cita varchar(13) = '170238111'
+SELECT ESTADO, USUARIOS, USUARIOR FROM [SIGSALUD].[dbo].[ARCHIVO_MOV] WHERE ID_CITA = @lid_cita

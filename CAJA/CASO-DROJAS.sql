@@ -1,0 +1,40 @@
+use SIGSALUD
+select * from PAGOC where usuario = 'CFERNANDEZ' 
+AND FECHA = CONVERT(DATETIME, '2018-08-01', 101)   order by PAGOID 
+
+
+
+
+
+use SIGSALUD
+select * from PAGOC ORDER BY PAGOID DESC
+
+select SUM(TOTAL) from PAGOC where usuario = 'DROJAS' 
+AND FECHA = CONVERT(DATETIME, '2018-01-06', 101)  AND ESTADO = '2' 
+
+
+SELECT 2732.97 - 2669.97
+
+
+select * from PAGOC where usuario = 'DROJAS' 
+AND FECHA = CONVERT(DATETIME, '2018-06-01', 101)   order by PAGOID 
+
+
+UPDATE PAGOC SET FECHA = CONVERT(DATETIME, '2018-01-08', 101) where usuario = 'CFERNANDEZ' AND FECHA = CONVERT(DATETIME, '2018-08-01', 101)
+
+use SIGSALUD
+select * from PAGOC where usuario = 'CFERNANDEZ' 
+AND FECHA = CONVERT(DATETIME, '2018-08-01', 101)   order by PAGOID 
+
+
+
+SELECT CONVERT(DATETIME, '2018-06-01', 101)
+
+
+select * from PAGOC where NUMERO = '001-1875274'
+UNION ALL
+select * from PAGOC where NUMERO = '001-1875275'
+
+usuario = 'DROJAS' 
+AND FECHA = CONVERT(DATETIME, '2018-01-06', 101)   order by PAGOID 
+

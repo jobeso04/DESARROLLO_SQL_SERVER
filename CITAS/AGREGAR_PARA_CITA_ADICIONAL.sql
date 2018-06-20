@@ -1,0 +1,3 @@
+use SIGSALUD
+select * from dbo.ROLACTIVIDAD where PERIODO = '201612' and CONSULTORIO = '6081' and TURNO_CONSULTA = 'T'
+update dbo.ROLACTIVIDAD set d28 = 'EOI' where PERIODO = '201612' and CONSULTORIO = '6081' and TURNO_CONSULTA = 'T'

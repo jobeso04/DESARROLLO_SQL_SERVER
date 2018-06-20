@@ -1,0 +1,33 @@
+USE [SIGSALUD]
+GO
+
+/****** Object:  StoredProcedure [dbo].[SP_GET_ACCESO_SUBMENU_2_OBS]    Script Date: 06/10/2016 12:20:06 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[SP_GET_ACCESO_SUBMENU_2_OBS](
+@P_DNI VARCHAR(8),
+@P_URL VARCHAR(150)
+)
+AS BEGIN
+
+-- Emergencia
+-- permisosModel.php
+-- getVerificarMenu
+
+SELECT
+ID_SUBMENU
+FROM ACCESO_SUBMENU
+WHERE DNI = @P_DNI
+AND URL = @P_URL
+AND ESTADO = 1
+AND substring(ID_AM,9,8) = '16000002'
+
+
+END
+GO
+
+

@@ -1,0 +1,26 @@
+USE [BDPERSONAL]
+GO
+
+/****** Object:  Table [dbo].[TMP_HORAS_POR_MEDICO]    Script Date: 12/14/2017 11:54:51 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TMP_HORAS_POR_MEDICO](
+	[codigo] [varchar](13) NULL,
+	[medico] [varchar](250) NULL,
+	[ID_ACTIVIDAD] [int] NULL,
+	[TOTAL_HORAS] [numeric](38, 0) NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

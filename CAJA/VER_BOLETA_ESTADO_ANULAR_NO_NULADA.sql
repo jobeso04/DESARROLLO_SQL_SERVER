@@ -1,0 +1,44 @@
+/* PROCEDIMIENTO PARA VER BOLETA */
+
+declare @lfecha DATETIME = CONVERT(DATETIME,'22/12/2015',103)
+Select ESTADO, PAGOID, NUMERO, FECHA, TURNO, PACIENTE, HISTORIA, NOMBRE, USUARIO, TOTAL, NOMBRE_CONSULTORIO, NOMBRE_MEDICO, MODULO, TURNO_NOMBRE, ORIGEN from V_PAGOC WHERE FECHA = @lfecha order by FECHA_REGISTRO desc
+Select NOMBRE, CANTIDAD, PRECIO, DESCUENTO, IMPORTE from V_PAGOD WHERE PAGOID = '15214776'
+
+
+Select * from V_PAGOD WHERE PAGOID = 
+
+
+
+declare @lnumero varchar(100) = '002-0947530'
+declare @lpagoid varchar(50) = '15177769'
+declare @lnombre varchar(150) = 'ANYACO LOPEZ'
+declare @lestado varchar(2) = '2'
+
+Select * from PAGOC WHERE FECHA = @lfecha order by fecha desc
+
+
+
+Select * from PAGOC WHERE NUMERO = @lnumero 
+Select * from PAGOC WHERE pagoid = @lpagoid */
+Select * from PAGOC WHERE NOMBRE = @lnombre 
+
+Select PAGOID, FECHA, fecha_registro, tipo_documento, NUMERO, NOMBRE, CAJA, TURNO, CONSULTORIO, USUARIO, TOTAL, MODULO, ESTADO, origen from PAGOC WHERE NUMERO = @lnumero
+ /* UPDATE PAGOC SET ESTADO = @lestado WHERE pagoid = @lpagoid     */
+Select PAGOID, FECHA, fecha_registro, tipo_documento, NUMERO, NOMBRE, CAJA,TURNO, CONSULTORIO, USUARIO, TOTAL, MODULO, ESTADO, origen from PAGOC WHERE NUMERO = @lnumero
+select * from pagod where PAGOID = @lpagoid
+select nombre from USUARIO where USUARIO = (select USUARIO from PAGOC WHERE NUMERO = @lnumero) 
+SELECT ITEM, NOMBRE  FROM ITEM WHERE ITEM IN (select ITEM from pagod where PAGOID = @lpagoid)
+
+SELECT * FROM EMERGENCIA WHERE NOMBRES LIKE 'CANALES PARODI%'
+
+SELECT * FROM PACIENTE WHERE PACIENTE = '2008088463'
+
+0088876             
+
+SELECT * FROM ARCHIVO_MOV WHERE HISTORIA = '%88876'
+
+SELECT * FROM ATENCIONC WHERE HISTORIA LIKE '%88876'
+SELECT * FROM CITA WHERE PACIENTE = '2008088463'
+
+SELECT * FROM HIS  WHERE PACIENTE LIKE 'CANALES%' ORDER BY PACIENTE ASC
+

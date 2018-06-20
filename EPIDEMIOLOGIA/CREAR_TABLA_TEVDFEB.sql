@@ -1,0 +1,35 @@
+USE [SIGSALUD]
+GO
+
+/****** Object:  Table [dbo].[TEVDFEB]    Script Date: 10/07/2015 12:05:35 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TEVDFEB](
+	[IDTEVDFEB] [int] IDENTITY(1,1) NOT NULL,
+	[IDSEMANA] [int] NULL,
+	[CDISTRITO] [varchar](150) NULL,
+	[CLOCALIDAD] [varchar](150) NULL,
+	[CEDADMENOR1] [varchar](5) NULL,
+	[CEDAD1Y4] [varchar](5) NULL,
+	[CEDAD5Y9] [varchar](5) NULL,
+	[CEDAD10Y19] [varchar](5) NULL,
+	[CEDAD20Y59] [varchar](5) NULL,
+	[CEDAD60YMAS] [varchar](5) NULL,
+	[CTOTALATENCION] [int] NULL,
+	[CUSUARIO] [varchar](50) NULL,
+	[DFECHAREGISTRO] [datetime] NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

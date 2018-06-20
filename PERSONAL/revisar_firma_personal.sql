@@ -1,0 +1,11 @@
+USE  BDPERSONAL
+SELECT * FROM  [BDPERSONAL].[dbo].[FIRMA_ROL] WHERE dni = '07655531'
+
+update [BDPERSONAL].[dbo].[FIRMA_ROL] set dni = '42369161'  WHERE dni = '07655531'
+
+UPDATE [BDPERSONAL].[dbo].[FIRMA_ROL] SET estado  = '1'  WHERE dni = '09506925' AND unidad = '45'
+
+
+ 17
+ 
+

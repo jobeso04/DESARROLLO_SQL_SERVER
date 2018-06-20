@@ -1,0 +1,9 @@
+
+
+exec [SP_LIQUIDA_CAMBIA_ESTADO_CE_SIS] -- todas las noches
+
+
+exec dbo.SP_CIERRE_CUENTAS_LIQUIDACIONES_EMERGENCIA  -- cada 6 horas
+exec dbo.SP_CIERRE_CUENTAS_LIQUIDACIONES_ANTERIORES  -- 12 de la noche
+
+

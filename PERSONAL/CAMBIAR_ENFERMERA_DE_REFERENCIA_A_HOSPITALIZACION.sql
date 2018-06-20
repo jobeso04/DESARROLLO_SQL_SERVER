@@ -1,0 +1,14 @@
+USE BDPERSONAL
+
+SELECT * FROM MAESTRO WHERE NOMBRE LIKE 'CANCHA%'
+
+
+SELECT * FROM dbo.ServicioMaestro WHERE CODIGO = '084386'
+
+61	13	
+
+DEBE ESTAR EN :
+
+65  19
+
+UPDATE dbo.ServicioMaestro  SET IdServDepartUnid = '65', IdDepartUnid = '19' WHERE CODIGO = '084386'

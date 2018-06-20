@@ -1,0 +1,29 @@
+USE [SIGSALUD]
+GO
+
+/****** Object:  Table [dbo].[TMP_TRAMA_C2]    Script Date: 10/13/2017 15:03:37 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TMP_TRAMA_C2](
+	[PERIODO] [varchar](7) NULL,
+	[IPRESS] [varchar](8) NULL,
+	[UGIPRESS] [varchar](8) NULL,
+	[SEXO] [varchar](1) NULL,
+	[GRUPO_EDAD] [varchar](2) NULL,
+	[DIAGNOSTICO_EMERGENCIA] [varchar](10) NULL,
+	[TOTAL_ATENDIDOS] [int] NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

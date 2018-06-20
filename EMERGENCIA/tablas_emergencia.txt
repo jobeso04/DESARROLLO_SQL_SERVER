@@ -1,0 +1,17 @@
+[SIGSALUD].[dbo].[EMERGENCIA]
+
+[SIGSALUD].[dbo].[V_MEDICO]
+
+
+[SIGSALUD].[dbo].[EMERGENCIA_DET_WEB]
+
+
+[SIGSALUD].[dbo].[MEDICO]
+
+
+[SIGSALUD].[dbo].[USUARIO_WEB]
+
+
+[SIGSALUD].[dbo].[turno_medico]
+
+[SIGSALUD].[dbo].[CONSULTORIO]

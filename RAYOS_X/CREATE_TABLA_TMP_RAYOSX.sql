@@ -1,0 +1,30 @@
+USE [SIGSALUD]
+GO
+
+/****** Object:  Table [dbo].[TMP_RAYOSX]    Script Date: 05/27/2016 12:13:35 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TMP_RAYOSX](
+	[RAYOSX] [int] NOT NULL,
+	[ITEM] [char](10) NOT NULL,
+	[ZONA] [char](1) NOT NULL,
+	[CANTIDAD] [int] NOT NULL,
+	[DESCRIPCION] [varchar](250) NULL,
+	[SEGURO] [varchar](150) NULL,
+	[PRECIO] [numeric](18, 3) NULL,
+	[IMPORTE] [numeric](18, 3) NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

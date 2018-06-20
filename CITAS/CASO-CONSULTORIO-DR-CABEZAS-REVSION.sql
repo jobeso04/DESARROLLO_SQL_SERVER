@@ -1,0 +1,35 @@
+use sigsalud
+select * from cita where fecha between convert(datetime, '2017-06-01', 103) and convert(datetime, '2017-06-30', 103)
+
+
+select * from cita where fecha = convert(datetime, '2017-05-29', 101) AND MEDICO = 'CDE'
+
+
+select * from CONSULTORIO where NOMBRE like 'trauma%'
+
+UPDATE CONSULTORIO SET NOMBRE = 'TRAUMATOLOGIA Y ORTOPEDIA 1' WHERE CONSULTORIO = '2022'
+
+
+SELECT * FROM dbo.RESULTADOC
+
+esta con : 
+
+SELECT * FROM dbo.ROLACTIVIDAD WHERE  CONSULTORIO = '2022' AND PERIODO = '201705' AND TURNO_CONSULTA = 'T'
+
+UPDATE dbo.ROLACTIVIDAD SET D29 = 'CDE' WHERE  CONSULTORIO = '2022' AND PERIODO = '201705' AND TURNO_CONSULTA = 'T'
+
+UPDATE dbo.ROLACTIVIDAD WHERE  CONSULTORIO = '2022' AND PERIODO = '201705'
+
+
+
+
+
+2022  	TRAUMATOLOGIA Y ORTOPEDIA
+
+2029  	TRAUMATOLOGIA Y ORTOPEDIA 2
+
+select * from MEDICO where NOMBRE like 'cabeza%'
+
+CDE
+
+

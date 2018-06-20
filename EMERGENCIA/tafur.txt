@@ -1,0 +1,9 @@
+		    $resultado->execute(array($usuario));
+
+Katherine Tafur Navarro
+
+17051483
+
+17052487
+
+20507151320

@@ -1,0 +1,13 @@
+use bdpersonal
+/*
+alter table [BDPERSONAL].[dbo].[ACTIVIDAD_DETALLE] add FECHA_REGISTRO DATETIME
+UPDATE [BDPERSONAL].[dbo].[ACTIVIDAD_DETALLE] SET FECHA_REGISTRO = GETDATE()
+*/
+
+
+
+
+select  * from ACTIVIDADES
+select * from dbo.ACTIVIDAD_DETALLE where  CODIGO = '084374' and MES = 9 and ANIO = 2017
+
+delete from [BDPERSONAL].[dbo].[ACTIVIDAD_DETALLE] where CODIGO = '084374'

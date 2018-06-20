@@ -1,0 +1,1 @@
+select * from PAGOC where FECHA = convert(datetime, '2018-04-19', 101) and USUARIO = 'EARELLANO' ORDER BY NUMERO DESC

@@ -1,0 +1,27 @@
+USE [SIGSALUD]
+GO
+
+/****** Object:  Table [dbo].[TMP_VENCI]    Script Date: 05/25/2016 18:45:47 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TMP_VENCI](
+	[ITEM] [char](10) NOT NULL,
+	[NOMBRE] [varchar](250) NULL,
+	[PRESENTACION] [varchar](10) NULL,
+	[stock1] [numeric](18, 2) NULL,
+	[FECHA_VENCIMIENTO] [datetime] NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

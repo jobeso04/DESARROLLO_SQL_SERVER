@@ -1,0 +1,40 @@
+use sigsalud
+select MEDICO, MEDICO1, QUIEN_ATIENDE, * from emergencia where EMERGENCIA_ID  = '16016643'
+
+/* update EMERGENCIA set QUIEN_ATIENDE = 'FLF' where EMERGENCIA_ID  = '16016643' */
+
+/* corregir a tipe */
+//* update EMERGENCIA set QUIEN_ATIENDE = 'THW' where EMERGENCIA_ID  = '16016643' */
+
+/* 16016643 */
+
+SELECT * FROM dbo.EMERGENCIA_DET_WEB WHERE EMERGENCIA_ID  = '16016643'
+
+SELECT * FROM  FROM [SIGSALUD].[dbo].[EMERGENCIA_PROC_WEB]  WHERE EMERGENCIA_ID  = '16016643'
+
+
+
+SELECT [ID_PROCE_WEB]
+      ,[PROFESIONAL]
+      ,[FECHA]
+      ,[HORA]
+      ,[FECHA_HORA_REG]
+      ,[PACIENTE]
+      ,[NOMBRES]
+      ,[CODIGO_PROC]
+      ,[TRATAMIENTO]
+      ,[SEGURO]
+      ,[ZONA_APLICACION]
+      ,[NRO_TICKET]
+      ,[ESTADO]
+      ,[EDAD]
+      ,[FECHA_NACI]
+      ,[APELLIDOS]
+      ,[NOMBRE]
+      ,[SEXO]
+      ,[TIPO_DE_EDAD]
+      ,[NEDAD]
+      ,[DNI]
+  FROM [SIGSALUD].[dbo].[EMERGENCIA_PROC_WEB] WHERE PROFESIONAL = 'FLF'
+GO
+

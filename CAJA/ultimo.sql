@@ -1,0 +1,21 @@
+  USE SIGSALUD 
+  SELECT * FROM dbo.TARIFARIO_GENERAL_2017
+  
+  SELECT * FROM ITEM WHERE ITEM = '60262'
+  
+  UPDATE ITEM SET ACTIVO = '7' WHERE ITEM = '60262'
+  
+   SELECT * FROM TARIFARIO_GENERAL_2017  where soat <> 0 
+   
+   SELECT * FROM TARIFARIO_GENERAL_2017  where soat = 0 
+   
+   
+    sELECT activo, * FROM TARIFARIO_GENERAL_2017 where NOMBRE like '%emergencia%'
+    
+     sELECT * FROM TARIFARIO_GENERAL_2017 where CPT = '89055'
+    
+    
+    
+    SELECT ACTIVO, * FROM item  where codcpt = '11655'
+    3591
+    

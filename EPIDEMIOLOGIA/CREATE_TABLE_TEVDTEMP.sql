@@ -1,0 +1,34 @@
+USE [SIGSALUD]
+GO
+
+/****** Object:  Table [dbo].[TEVDTEMP]    Script Date: 10/28/2015 08:20:28 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TEVDTEMP](
+	[EMERGENCIA_ID] [char](20) NULL,
+	[FECHA] [datetime] NULL,
+	[HORA] [char](5) NULL,
+	[NOMBRES] [varchar](100) NULL,
+	[PACIENTE] [char](10) NULL,
+	[FECHA_NACIMIENTO] [datetime] NULL,
+	[EDAD] [char](10) NULL,
+	[SEXO] [char](10) NULL,
+	[DIRECCION] [varchar](60) NOT NULL,
+	[DISTRITO] [varchar](150) NULL,
+	[LOCALIDAD] [char](12) NULL,
+	[CIEXTOTAL] [char](10) NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

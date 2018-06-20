@@ -1,0 +1,34 @@
+USE [BDPERSONAL]
+GO
+
+/****** Object:  Table [dbo].[TMP_LGJ_CESE]    Script Date: 12/20/2016 08:42:39 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TMP_LGJ_CESE](
+	[IDMASTER] [int] NULL,
+	[FILA] [int] NULL,
+	[APELLIDOSNOMBRES] [varchar](250) NULL,
+	[FECHANACIMIENTO] [varchar](10) NULL,
+	[SEXO] [varchar](1) NULL,
+	[DNI] [varchar](8) NULL,
+	[NOMBRE] [varchar](8000) NULL,
+	[FECHA] [varchar](10) NULL,
+	[EDAD] [int] NULL,
+	[FALTA] [int] NULL,
+	[ANIO_QUE_DEBE_TERMINAR] [varchar](10) NULL,
+	[CARGO] [varchar](250) NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

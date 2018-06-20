@@ -1,0 +1,21 @@
+USE [SIGSALUD]
+GO
+
+/****** Object:  Table [dbo].[TARIFARIO_INTEGRADO_TOTAL]    Script Date: 07/17/2017 14:06:02 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[TARIFARIO_INTEGRADO_TOTAL](
+	[NRO] [int] IDENTITY(1,1) NOT NULL,
+	[CPT] [nvarchar](255) NULL,
+	[DESCRIPCION] [nvarchar](255) NULL,
+	[PRECIO_SIS] [numeric](7, 3) NULL,
+	[RESOLUCION] [nvarchar](255) NULL
+) ON [PRIMARY]
+
+GO
+
+

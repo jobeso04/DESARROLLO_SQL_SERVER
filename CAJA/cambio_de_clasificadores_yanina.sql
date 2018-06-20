@@ -1,0 +1,26 @@
+USE SIGSALUD
+
+SELECT * FROM CLASIFICADOR WHERE CLASIFICADOR IN ('1.3.34.15')
+
+
+SELECT CODCPT, * FROM ITEM WHERE ITEM IN ('60710')
+
+
+
+60208 - 1.3.34.15 - 14000
+60235 - 16010
+60388 - 22325
+60675 - 27086
+60710 - 27253
+
+
+SELECT * FROM ITEM WHERE CODCPT IN ('14000', '16010', '22325', '27086', '27253') AND SUBSTRING(item,1,1) = '6'
+
+update ITEM set clasificador = '1.3.34.15'  WHERE CODCPT IN ('14000', '16010', '22325', '27086', '27253') AND SUBSTRING(item,1,1) = '6'
+update ITEM set clasificador = '1.3.34.11'  WHERE CODCPT IN ('40490') AND SUBSTRING(item,1,1) = '6'
+update ITEM set clasificador = '1.3.34.16'  WHERE CODCPT IN (select codcpt from ITEM where ITEM in ('63219')) AND SUBSTRING(item,1,1) = '6'
+update ITEM set clasificador = '1.3.2.4.1.99'  WHERE CODCPT IN (select codcpt from ITEM where ITEM in ('60026')) AND SUBSTRING(item,1,1) = '6'
+
+-----
+SELECT * FROM CLASIFICADOR WHERE CLASIFICADOR IN ('1.3.2.4.1.99')
+

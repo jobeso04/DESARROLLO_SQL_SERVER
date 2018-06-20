@@ -1,0 +1,21 @@
+use SIGSALUD
+select * from INGRESOC where INGRESOID = '17000235'
+select * from INGRESOd where INGRESOID = '17000235'
+
+delete from INGRESOd where INGRESOID = '17000235'
+delete from INGRESOc where INGRESOID = '17000235'
+
+
+170598    
+170769    
+
+
+
+
+select * from TRANSFERENCIAC where TRANSFERENCIAID = '17000365'
+select * from TRANSFERENCIAd where TRANSFERENCIAID = '17000365'
+
+
+
+delete from TRANSFERENCIAd where TRANSFERENCIAID = '17000365'
+delete from TRANSFERENCIAc where TRANSFERENCIAID = '17000365'

@@ -1,0 +1,35 @@
+/* revisar cas de emergencia que se repite varias veces */
+
+declare @lidemergencia varchar(13) = '17003826'
+select * from EMERGENCIA where EMERGENCIA_ID = @lidemergencia 
+select * from EMERGENCIA_DET_WEB where EMERGENCIA_ID = @lidemergencia order by fecha_hora_reg asc
+
+
+
+
+delete from EMERGENCIA_DET_WEB where ID_EME_DET_WEB in ('17008888', '17008889', '17008890', '17008891', '17008892', '17008893', '17008894')
+delete from EMERGENCIA_DET_WEB where ID_EME_DET_WEB in ('17008879', '17008880', '17008881', '17008882', '17008883', '17008884', '17008885', '17008886')
+delete from EMERGENCIA_DET_WEB where ID_EME_DET_WEB in ('17008888', '17008889', '17008890', '17008891', '17008892', '17008893', '17008894')
+delete from EMERGENCIA_DET_WEB where ID_EME_DET_WEB in ('17008879', '17008880', '17008881', '17008882', '17008883', '17008884', '17008885', '17008886')
+delete from EMERGENCIA_DET_WEB where ID_EME_DET_WEB in ('17008872', '17008902')
+
+delete from EMERGENCIA_DET_WEB where ID_EME_DET_WEB in ('17008888', '17008889', '17008890', '17008891', '17008892', '17008893', '17008894')
+delete from EMERGENCIA_DET_WEB where ID_EME_DET_WEB in ('17008879', '17008880', '17008881', '17008882', '17008883', '17008884', '17008885', '17008886')
+delete from EMERGENCIA_DET_WEB where ID_EME_DET_WEB in ('17008888', '17008889', '17008890', '17008891', '17008892', '17008893', '17008894')
+delete from EMERGENCIA_DET_WEB where ID_EME_DET_WEB in ('17008879', '17008880', '17008881', '17008882', '17008883', '17008884', '17008885', '17008886')
+delete from EMERGENCIA_DET_WEB where ID_EME_DET_WEB in ('17008872', '17008902')
+
+delete from EMERGENCIA_DET_WEB where ID_EME_DET_WEB in ('17008942', '17008943', '17008944', '17008945', '17008946', '17008947', '17008948', '17008949')
+
+
+
+
+
+declare @lidemergencia varchar(13) = '17003826'
+select * from EMERGENCIA where EMERGENCIA_ID = @lidemergencia 
+select * from EMERGENCIA_DET_WEB where EMERGENCIA_ID = @lidemergencia order by fecha_hora_reg asc
+
+
+
+
+

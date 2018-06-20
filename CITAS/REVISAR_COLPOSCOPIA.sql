@@ -1,0 +1,84 @@
+USE SIGSALUD
+SELECT * FROM CITA WHERE FECHA = CONVERT(DATETIME, '2017-05-23', 101)  AND CONSULTORIO = '4047' AND MEDICO = 'CPG'
+
+
+
+SELECT * FROM CITA WHERE FECHA = CONVERT(DATETIME, '2017-05-23', 101)  AND CONSULTORIO = '4047'
+
+SELECT * FROM CITA WHERE FECHA BETWEEN CONVERT(DATETIME, '2017-05-01', 101)  AND CONVERT(DATETIME, '2017-05-31', 101)  AND CONSULTORIO = '4047'
+
+
+SELECT * FROM CITA WHERE CITA_ID = '170099264'
+
+declare @lid_cita int = (select convert(int, MAX(CITA_ID)) + 1  as id_cita from CITA)
+SELECT @lid_cita
+
+
+SELECT * FROM MEDICO WHERE MEDICO = 'CMP'
+
+
+SELECT * FROM CITA WHERE  MEDICO = 'CPG' AND CONSULTORIO = '4047'  ORDER BY FECHA DESC
+
+
+
+
+
+SELECT * FROM CONSULTORIO ORDER BY NOMBRE ASC
+
+
+
+USE SIGSALUD
+SELECT * FROM V_CITA WHERE FECHA = CONVERT(DATETIME, '2017-05-23', 101) ORDER BY NOMBRE_CONSULTORIO ASC
+
+
+
+SELECT * FROM CITA WHERE 
+FECHA BETWEEN CONVERT(DATETIME, '2016-01-01', 101)  AND CONVERT(DATETIME, '2016-12-31', 101)  and ESTADO = '4' and CONSULTORIO in (select consultorio from CONSULTORIO where CONSULTORIO like '1%' and TIPO = 'C' and CONSULTORIO not in ('1028', '1029', '1033', '1032'))
+
+total_citas_medicas = '44970'
+
+nuevos = '13950'
+reincidentes = 37776
+
+SELECT paciente, COUNT(paciente) as contar FROM CITA WHERE 
+FECHA BETWEEN CONVERT(DATETIME, '2016-01-01', 101)  AND CONVERT(DATETIME, '2016-12-31', 101)  and ESTADO = '4' and CONSULTORIO in (select consultorio from CONSULTORIO where CONSULTORIO like '1%' and TIPO = 'C' and CONSULTORIO not in ('1028', '1029', '1033', '1032'))
+group by PACIENTE having COUNT(paciente) < 2 order by COUNT(paciente) asc
+
+
+SELECT paciente, COUNT(paciente) as contar FROM CITA WHERE 
+FECHA BETWEEN CONVERT(DATETIME, '2016-01-01', 101)  AND CONVERT(DATETIME, '2016-12-31', 101)  and ESTADO = '4' and CONSULTORIO in (select consultorio from CONSULTORIO where CONSULTORIO like '1%' and TIPO = 'C' and CONSULTORIO not in ('1028', '1029', '1033', '1032'))
+group by PACIENTE having COUNT(paciente) > 1 order by COUNT(paciente) asc
+ 
+
+
+pacientes : 13950
+
+
+
+select consultorio from CONSULTORIO where CONSULTORIO like '1%' and TIPO = 'C' and CONSULTORIO not in ('1028', '1029', '1033', '1032')
+
+
+1028  
+1029  
+1033  
+1032  
+
+/* mes */
+
+
+SELECT * FROM CITA WHERE 
+FECHA BETWEEN CONVERT(DATETIME, '2016-01-01', 101)  AND CONVERT(DATETIME, '2016-01-31', 101)  and ESTADO = '4' and CONSULTORIO in (select consultorio from CONSULTORIO where CONSULTORIO like '1%' and TIPO = 'C')
+
+total_citas_medicas = '3328'
+
+nuevos = '1748'
+reincidentes = 563
+
+SELECT distinct paciente FROM CITA WHERE 
+FECHA BETWEEN CONVERT(DATETIME, '2016-01-01', 101)  AND CONVERT(DATETIME, '2016-01-31', 101)  and ESTADO = '4' and CONSULTORIO in (select consultorio from CONSULTORIO where CONSULTORIO like '1%' and TIPO = 'C')
+
+SELECT paciente, COUNT(paciente) as contar FROM CITA WHERE 
+FECHA BETWEEN CONVERT(DATETIME, '2016-01-01', 101)  AND CONVERT(DATETIME, '2016-01-31', 101)  and ESTADO = '4' and CONSULTORIO in (select consultorio from CONSULTORIO where CONSULTORIO like '1%' and TIPO = 'C')
+group by PACIENTE having COUNT(paciente) > 1 order by COUNT(paciente) asc
+ 
+

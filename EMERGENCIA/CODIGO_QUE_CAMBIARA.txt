@@ -1,0 +1,12 @@
+public function getVerificarMenu($dni, $a_submenu)
+	{
+		$sentencia = "select * from acceso_submenu where dni=? and url=? and estado=1";
+		$resultado = $this->_db->prepare($sentencia);
+		$resultado->execute(array($a_submenu->getDni(),$a_submenu->getUrl()));
+		if($resultado->rowCount()){
+			$array = array('estado' => 1, 'mensaje' => 'Datos correctos.'.$a_submenu->getDni().$a_submenu->getUrl());
+		}else{
+			$array = array('estado' => 0, 'mensaje' => 'No tiene permisos suficientessss para poder utilizar esta opción.' );
+		}
+		return $array;
+	}

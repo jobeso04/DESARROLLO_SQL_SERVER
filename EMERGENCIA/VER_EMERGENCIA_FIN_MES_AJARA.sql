@@ -1,0 +1,23 @@
+use sigsalud 
+DECLARE @lfecha1 varchar(10) = '2016-03-01'
+DECLARE @lfecha2 varchar(10) = '2016-03-30'
+
+SELECT COUNT(A.emergencia_id) AS CNT
+    FROM EMERGENCIA A INNER JOIN
+     BDCATEGORIAS B ON B.COD_CAT = A.CODGRUPO INNER JOIN
+     dbo.CIEX C ON A.CIEX1 = C.CIEX 
+WHERE A.FECHA between CONVERT(datetime, @lfecha1,101) and CONVERT(datetime, @lfecha2,101) AND CIEX1 <> '0'
+
+
+SELECT COUNT(A.emergencia_id) AS CNT
+FROM EMERGENCIA A INNER JOIN
+     BDCATEGORIAS B ON B.COD_CAT = A.CODGRUPO 
+WHERE A.FECHA between CONVERT(datetime, @lfecha1,101) and CONVERT(datetime, @lfecha2,101) AND CIEX1 <> '0' 
+
+
+/*
+SELECT * FROM TABLA1
+WHERE EMERGENCIA_ID NOT IN
+(SELECT TABLA2.EMERGENCIA_ID FROM TABLA2)
+*/
+

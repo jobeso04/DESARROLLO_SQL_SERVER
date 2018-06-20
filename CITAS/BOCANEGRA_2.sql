@@ -1,0 +1,32 @@
+  update CUENTA set nrofua = '2101625250051' where CUENTAID = '1765069'
+  update ATENCION_SEGURO set FECHA_ATENCION = convert(datetime, '2017-10-02', 101) where ATENCION_SEGURO_ID = '17063799'
+  
+  
+  
+  select * from CUENTA where PACIENTE = '2008099997' order by FECHA_APERTURA desc
+ select * from ATENCION_SEGURO where PACIENTE = '2008099997' order by FECHA_ATENCION desc
+ 
+  select * from ATENCION_SEGURO  order by FECHA_ATENCION desc
+  
+  update ATENCION_SEGURO set paciente = '2008099997', HISTORIA = '0100447', NOMBRES = 'CHUQUITAY BOCANEGRA LUIS', HORA_ATENCION = '07:21',
+  codigo_afiliacion = '220210566462', NUMREFERENCIA = '87449', presta = '01', numautoriza = '', monto = '0', entidadsis = '5950', tipo_prestacion = '056',
+  origen = 'CE', CONSULTORIO = '1095', SEGURO = '01', TIPO_AFILIACION_SEG= 'N', TIPO_ATENCION_SEG = 'R', TIPO_GESTANTE = '00',
+  ESTADO = '2', USUARIO = 'EHUACACHE', Edad = '075a00m22d', CITA_ID = '170201735', ID_CUENTA = '1767151'   where ATENCION_SEGURO_ID = '17065845'
+  
+  UPDATE ATENCION_SEGURO SET CITA_ID = '170201679', NUMATENCION = '2101625250051'  WHERE ATENCION_SEGURO_ID = '17063799'
+  
+  
+  SELECT * FROM ATENCION_SEGURO where ATENCION_SEGURO_ID = '17065845'
+  UNION ALL
+  SELECT * FROM ATENCION_SEGURO where ATENCION_SEGURO_ID = '17063799'
+  
+  
+  select * from CUENTA where PACIENTE = '2008099997' order by FECHA_APERTURA desc
+  
+  update CUENTA set nrofua = '2101625250051' where CUENTAID = '1765069'
+  
+  update CUENTA set nrofua = '2101625252101' where CUENTAID = '1767151'
+   
+   
+ 
+ 

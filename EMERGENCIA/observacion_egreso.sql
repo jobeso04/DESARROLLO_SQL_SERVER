@@ -1,0 +1,1 @@
+select fecha_salida, observacion_egreso from EMERGENCIA where EMERGENCIA_ID = '17007388'

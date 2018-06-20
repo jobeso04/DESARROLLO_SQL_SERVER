@@ -1,0 +1,27 @@
+USE [SIGSALUD]
+GO
+
+/****** Object:  Table [dbo].[TARIFARIO_AGOSTO_2017]    Script Date: 08/15/2017 16:55:07 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TARIFARIO_AGOSTO_2017](
+	[CPT] [varchar](50) NULL,
+	[NOMBRE] [varchar](250) NULL,
+	[PRECIO_PAGANTE] [numeric](18, 2) NULL,
+	[PRECIO_SIS] [numeric](18, 2) NULL,
+	[PRECIO_SOAT] [numeric](18, 2) NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

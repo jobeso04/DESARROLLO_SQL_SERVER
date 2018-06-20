@@ -1,0 +1,53 @@
+/* ver dni en tabla medicos y maestro */
+
+DECLARE @lcdni varchar(13) = '22294542'
+
+use SIGSALUD
+select * from MEDICO where DNI = @lcdni
+
+use bdpersonal
+select * from maestro where DNI = @lcdni
+
+USE SIGSALUD 
+SELECT TOP 1 CODHIS, PROF_CITA, PLAZA FROM HIS WHERE SUBSTRING(CODHIS,2,8) =  @lcdni
+
+USE BDPERSONAL
+SELECT * FROM MAESTRO WHERE NOMBRE LIKE 'MARTINEZ%'
+
+USE SIGSALUD 
+SELECT  CODHIS, PROF_CITA, PLAZA FROM HIS WHERE PROF_CITA LIKE 'MARTINE%' ORDER BY PROF_CITA ASC
+  
+USE SIGSALUD
+SELECT * FROM ESPECIALIDAD WHERE ESPECIALIDAD = '0022' 
+
+UPDATE MEDICO SET ESPECIALIDAD  = '0026' WHERE MEDICO = '027'
+
+
+USE SIGSALUD
+SELECT * FROM dbo.SEMMEDICOS WHERE dni = '22294542'
+
+
+SELECT * FROM SEMEGRESO WHERE codpsal = '10840491401'
+
+declare @lndni varchar(13) = '08404914'
+  USE SIGSALUD
+   update [SIGSALUD].[dbo].[SEMMEDICOS] set COD_PROF = (SELECT semprofesion FROM ESPECIALIDAD WHERE ESPECIALIDAD = ( SELECT ESPECIALIDAD FROM MEDICO WHERE DNI = @lndni))  where DNI = @lndni
+   
+
+select * from HIS where PROF_CITA like 'MARTINEZ%'   
+22294542   
+   
+
+
+
+DECLARE @lcdni varchar(13) = '22294542'
+use SIGSALUD
+update semmedicos set nombre = (select NOMBRE from MEDICO where DNI = @lcdni) where DNI = @lcdni
+
+
+use bdpersonal
+select * from maestro where DNI = @lcdni
+
+USE SIGSALUD 
+SELECT TOP 1 CODHIS, PROF_CITA, PLAZA FROM HIS WHERE SUBSTRING(CODHIS,2,8) =  @lcdni
+

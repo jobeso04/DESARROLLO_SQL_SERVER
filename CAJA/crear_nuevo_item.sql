@@ -1,0 +1,72 @@
+DECLARE @lcnuevo_item varchar(8) = (SELECT top 1 CONVERT(int, item) + 1 as nuevo_item FROM [SIGSALUD].[dbo].[ITEM] WHERE SUBSTRING(ITEM,1,1) = '6' AND ACTIVO =  '1' ORDER BY ITEM  DESC)
+declare @lcnombre_item varchar(250) =  'EVALUACION DE TERAPIA OCUPACIONAL'
+declare @lccodcpt varchar(13) = '97003'
+declare @lnprecioa  numeric(18,2) =  0
+DECLARE @lc_usuario VARCHAR(50) = 'CREADO POR: ' +  '32921099'
+declare @lc_pc varchar(100) = 'DESDE ' + 'pc malo'
+INSERT INTO [SIGSALUD].[dbo].[ITEM] ([ITEM],[NOMBRE],[ABREVIATURA],[GRUPO_RECAUDACION],[CLASIFICADOR],[GRUPO_LIQUIDACION],[GRUPO_TARIFARIO],[PRESENTACION], [FAMILIA],[CLASE],[GENERICO],[LABORATORIO],
+    [FRACCION],[INTERFASE1], [VARIABLE],[MODULO],[ACTIVO],[SYSINSERT],[SYSUPDATE],[SYSDELETE],[INTERFASE2],[PETITORIO],[STOCK],[STOCK_MINIMO],[ITEM_EXCLUSION],
+       [ESTADO_A_CUENTA],[STOCK_CRITICO],[DISPONIBILIDAD],[APLICA_DSCTO],[PRESENTA],[CONCENTRA], [NOMBRECORTO],[CODCPT],[SECCION],[SUBSECCION],[REVISION],[agregar_cpt])
+           VALUES (@lcnuevo_item, @lcnombre_item, @lcnombre_item, '26', '1.3.3.4.1.99', '26', '0', '0', '0', '0', '0', '0', 1, '', 'N', 'CAJA', '1',  convert(varchar(10), getdate(), 103), '', '', '', 0, 0, 0, '', '4', 0, '', '', '0', '0', '', @lccodcpt, '', '', '', 'A')
+INSERT INTO [SIGSALUD].[dbo].[PRECIO]([ITEM],[FECHA],[PRECIOA],[PRECIOB],[PRECIOC],[PRECIOD],[PRECIOE],[PRECIOF],[PRECIOG],[PRECIOH],[PRECIOI],[PRECIOJ],[PRECIOK],[COSTO], [UTILIDAD], [PRECIOPUB],[DESCUENTO],[PRECIO],[HORA],[PRECIOX],[PROMEDIO],[SYSINSERT],[SYSUPDATE],[INGRESOID],USUARIO_MODIFICO,PC_MODIFICO, FECHA_MODIFICACION, USUARIO_MODIFICO_SOAT, PC_MODIFICO_SOAT, FECHA_MODIFICACION_SOAT)
+    VALUES (@lcnuevo_item, getdate(), @lnprecioa, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, '', 0,0, CONVERT(varchar(10), getdate(), 103), '','', @lc_usuario, @lc_pc, GETDATE(), @lc_usuario, @lc_pc, GETDATE())
+    
+   
+ DECLARE @lcnuevo_item_sis varchar(8) = (SELECT top 1 CONVERT(int, item) + 1 as nuevo_item FROM [SIGSALUD].[dbo].[ITEM] WHERE SUBSTRING(ITEM,1,1) = '6' AND ACTIVO =  '7' ORDER BY ITEM  DESC)
+ declare @lcnombre_item_sis varchar(250) = @lcnombre_item 
+ declare @lccodcpt_sis varchar(13) = @lccodcpt
+ declare @lnpreciosis  numeric(18,2) =  0
+ declare @lnpreciosoat  numeric(18,2) =  0
+ INSERT INTO [SIGSALUD].[dbo].[ITEM] ([ITEM],[NOMBRE],[ABREVIATURA],[GRUPO_RECAUDACION],[CLASIFICADOR],[GRUPO_LIQUIDACION],[GRUPO_TARIFARIO],[PRESENTACION], [FAMILIA],[CLASE],[GENERICO],[LABORATORIO],
+   [FRACCION],[INTERFASE1], [VARIABLE],[MODULO],[ACTIVO],[SYSINSERT],[SYSUPDATE],[SYSDELETE],[INTERFASE2],[PETITORIO],[STOCK],[STOCK_MINIMO],[ITEM_EXCLUSION],
+       [ESTADO_A_CUENTA],[STOCK_CRITICO],[DISPONIBILIDAD],[APLICA_DSCTO],[PRESENTA],[CONCENTRA], [NOMBRECORTO],[CODCPT],[SECCION],[SUBSECCION],[REVISION],[agregar_cpt])
+          VALUES (@lcnuevo_item_sis, @lcnombre_item_sis, @lcnombre_item_sis, '26', '1.3.3.4.1.99', '26', '0', '0', '0', '0', '0', '0', 1, '', 'N', 'CAJA', '7',  convert(varchar(10), getdate(), 103), '', '', '', 0, 0, 0, '', '4', 0, '', '', '0', '0', '', @lccodcpt_sis, '', '', '', 'A')
+ INSERT INTO [SIGSALUD].[dbo].[PRECIO]([ITEM],[FECHA],[PRECIOA],[PRECIOB],[PRECIOC],[PRECIOD],[PRECIOE],[PRECIOF],[PRECIOG],[PRECIOH],[PRECIOI],[PRECIOJ],[PRECIOK],[COSTO], [UTILIDAD],
+               [PRECIOPUB],[DESCUENTO],[PRECIO],[HORA],[PRECIOX],[PROMEDIO],[SYSINSERT],[SYSUPDATE],[INGRESOID],USUARIO_MODIFICO,PC_MODIFICO, FECHA_MODIFICACION, USUARIO_MODIFICO_SOAT, PC_MODIFICO_SOAT, FECHA_MODIFICACION_SOAT)
+                 VALUES (@lcnuevo_item_sis, getdate(), 0, 0,0,0,@lnpreciosis,0,0,@lnpreciosoat,0,0,0,0,0,0,0,0, '', 0,0, CONVERT(varchar(10), getdate(), 103), '', '', @lc_usuario, @lc_pc, GETDATE(), @lc_usuario, @lc_pc, GETDATE())
+                 
+
+                 
+
+
+SELECT ITEM, ACTIVO FROM [SIGSALUD].[dbo].[ITEM] WHERE CODCPT = '01987'
+
+SELECT * FROM  [SIGSALUD].[dbo].[PRECIO] WHERE ITEM IN ('64022', '607613')
+                 
+
+delete from PRECIO WHERE ITEM IN ('64030', '607621')
+delete from ITEM WHERE CODCPT = '97003'
+
+
+select ITEM, CODCPT, NOMBRE, ACTIVO from [SIGSALUD].[dbo].[ITEM] 
+
+
+ declare @lcbusqueda varchar(250) = '01987' 
+   select item, CODCPT, NOMBRE, activo from [SIGSALUD].[dbo].[ITEM] where SUBSTRING(ITEM,1,1) = '6'  AND 
+    NOMBRE COLLATE SQL_LATIN1_GENERAL_CP1_CI_AI LIKE '%' + @lcbusqueda + '%' OR CODCPT LIKE '%' + @lcbusqueda + '%'  OR ITEM LIKE '%' + @lcbusqueda + '%' AND ACTIVO IN ('1', '7')  ORDER BY NOMBRE ASC
+    
+
+
+declare @lcbusqueda varchar(250) = '1987' 
+   select item, CODCPT, NOMBRE, activo from [SIGSALUD].[dbo].[ITEM] where SUBSTRING(ITEM,1,1) = '6'  AND 
+    NOMBRE COLLATE SQL_LATIN1_GENERAL_CP1_CI_AI LIKE '%' + @lcbusqueda + '%' OR CODCPT LIKE '%' + @lcbusqueda + '%'  OR ITEM LIKE '%' + @lcbusqueda + '%' AND ACTIVO IN ('1', '7')  ORDER BY NOMBRE ASC
+ 
+SELECT * FROM [SIGSALUD].[dbo].[ITEM] WHERE CODCPT = '01987'                 
+
+SELECT * FROM [SIGSALUD].[dbo].[ITEM] WHERE CODCPT = '1987'   
+UPDATE [SIGSALUD].[dbo].[ITEM] SET CODCPT = '01987'  WHERE CODCPT = '1987'     
+
+  declare @lcbusqueda varchar(250) = '1987'
+  select ITEM, CODCPT, NOMBRE, GRUPO_RECAUDACION, CLASIFICADOR, GRUPO_LIQUIDACION, ACTIVO from [SIGSALUD].[dbo].[ITEM] where SUBSTRING(ITEM,1,1) = '6'  AND 
+    NOMBRE COLLATE SQL_LATIN1_GENERAL_CP1_CI_AI LIKE '%' + @lcbusqueda + '%' OR CODCPT LIKE '%' + @lcbusqueda + '%'   AND ACTIVO IN ('1', '7')  ORDER BY NOMBRE ASC
+
+
+     SELECT ITEM, PRECIOA, PRECIOB, PRECIOC, PRECIOD, PRECIOF, PRECIOG, PRECIOI, PRECIOJ, PRECIOK, CASE WHEN USUARIO_MODIFICO IS NULL THEN '' ELSE USUARIO_MODIFICO END  USUARIO_MODIFICO,
+     CASE WHEN PC_MODIFICO IS NULL THEN '' ELSE PC_MODIFICO END  PC_MODIFICO, CASE WHEN FECHA_MODIFICACION IS NULL THEN '' ELSE CONVERT(VARCHAR(50), FECHA_MODIFICACION, 120) END AS FECHA_MODIFICACION 
+     FROM [SIGSALUD].[dbo].[PRECIO] WHERE ITEM IN (select ITEM from [SIGSALUD].[dbo].[ITEM] where CODCPT = '01987'  AND SUBSTRING(ITEM,1,1) = '6' AND ACTIVO IN ('1'))
+     
+     SELECT ITEM, PRECIOA, PRECIOB, PRECIOC, PRECIOD, PRECIOF, PRECIOG, PRECIOI, PRECIOJ, PRECIOK, CASE WHEN USUARIO_MODIFICO IS NULL THEN '' ELSE USUARIO_MODIFICO END  USUARIO_MODIFICO,
+     CASE WHEN PC_MODIFICO IS NULL THEN '' ELSE PC_MODIFICO END  PC_MODIFICO, CASE WHEN FECHA_MODIFICACION IS NULL THEN '' ELSE CONVERT(VARCHAR(50), FECHA_MODIFICACION, 120) END AS FECHA_MODIFICACION 
+     FROM [SIGSALUD].[dbo].[PRECIO] WHERE ITEM IN (select ITEM from [SIGSALUD].[dbo].[ITEM] where CODCPT = '01987'  AND SUBSTRING(ITEM,1,1) = '6' AND ACTIVO IN ('7'))
+     
+            

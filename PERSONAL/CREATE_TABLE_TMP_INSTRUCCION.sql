@@ -1,0 +1,33 @@
+USE [BDPERSONAL]
+GO
+
+/****** Object:  Table [dbo].[TMP_INSTRUCCION]    Script Date: 11/23/2016 13:04:42 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TMP_INSTRUCCION](
+	[INDICADOR] [varchar](1) NOT NULL,
+	[IDMASTER] [int] NULL,
+	[ESTUDIO] [varchar](60) NULL,
+	[CONDICION] [varchar](13) NULL,
+	[DESDE] [varchar](13) NULL,
+	[HASTA] [varchar](13) NULL,
+	[CE] [varchar](250) NULL,
+	[CARRERA] [varchar](150) NULL,
+	[GRADO] [varchar](150) NULL,
+	[ESPECIALIDAD] [varchar](150) NULL,
+	[NRO_CARRERA_PROFESIONAL] [varchar](30) NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

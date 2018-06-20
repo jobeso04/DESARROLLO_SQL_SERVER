@@ -1,0 +1,3 @@
+use SIGSALUD
+select CONVERT(VARCHAR(10), FECHA, 103) AS FECHA, HORA, HISTORIA, NOMBRE, NOMBRE_TRANSACCION, TOTAL, NOMBRE_CONSULTORIO, usuario 
+from V_ORDENC where FECHA between CONVERT(datetime, '2016-05-01', 101) and CONVERT(datetime, '2016-07-31', 101) and estado = '0' order by NOMBRE  asc

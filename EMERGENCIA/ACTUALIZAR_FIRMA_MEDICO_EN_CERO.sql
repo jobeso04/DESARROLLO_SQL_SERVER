@@ -1,0 +1,5 @@
+
+SELECT * FROM MEDICO WHERE tiene_firma IS NULL
+
+USE SIGSALUD
+UPDATE MEDICO SET tiene_firma = '0' WHERE tiene_firma IS NULL

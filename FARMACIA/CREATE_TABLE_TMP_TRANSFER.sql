@@ -1,0 +1,30 @@
+USE [SIGSALUD]
+GO
+
+/****** Object:  Table [dbo].[TMP_TRANSFER]    Script Date: 03/08/2018 16:39:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TMP_TRANSFER](
+	[TRANSFERENCIAID] [char](8) NOT NULL,
+	[ITEM] [char](10) NOT NULL,
+	[CANTIDAD] [numeric](18, 2) NOT NULL,
+	[PRECIO] [numeric](18, 5) NOT NULL,
+	[DESCUENTO] [numeric](18, 2) NOT NULL,
+	[IMPORTE] [numeric](18, 2) NOT NULL,
+	[LOTE] [varchar](50) NULL,
+	[FECHA_VCTO] [datetime] NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

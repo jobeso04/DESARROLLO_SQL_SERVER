@@ -1,0 +1,31 @@
+USE [SIGSALUD]
+GO
+
+/****** Object:  Table [dbo].[tddefinitivo]    Script Date: 09/04/2015 08:37:47 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[tddefinitivo](
+	[IDD] [int] IDENTITY(1,1) NOT NULL,
+	[CSEXO] [varchar](1) NULL,
+	[CRANGO] [varchar](2) NULL,
+	[NTOTAL] [int] NULL,
+	[FECHA] [datetime] NULL,
+ CONSTRAINT [PK_tddefinitivo] PRIMARY KEY CLUSTERED 
+(
+	[IDD] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

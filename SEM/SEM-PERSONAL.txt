@@ -1,0 +1,13 @@
+EL RESGITRO DE PERSONAL MEDICO NUEVO DEBE SER REGISTRADO POR PERSONAL, EN ACSO CONTRARIO NO PODRA RECETAR Y ATENCION EN EMERGENCIA , ROL DE GYUARDIA SY TRAMS ENVIADAS L MINSA 
+
+
+set tablevalidate to 0 &&remueve la verificacion de la cabecera
+use tablarota exclusive
+copy to nuevatabla
+select tablarota 
+zap
+set tablevalidate to 1 && verifica la cabecera
+use tablarota exclusive
+append from nuevatabla
+
+

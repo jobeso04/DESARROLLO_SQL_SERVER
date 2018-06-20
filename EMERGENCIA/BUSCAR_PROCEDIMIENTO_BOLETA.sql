@@ -1,0 +1,21 @@
+ declare @lnumero varchar(11) = ?lcboleta
+   Select NUMERO, nombre, fecha_nacimiento from V_VALIDAR_BOLETA WHERE numero = @lnumero
+   
+   
+   SELECT * FROM PAGOD WHERE PAGOID = 
+   
+   Select * from V_VALIDAR_BOLETA WHERE numero = @lnumero
+   
+   
+   SELECT * FROM PAGOC ORDER BY FECHA_REGISTRO  DESC
+   
+   
+   SELECT * FROM PAGOC ORDER BY FECHA_REGISTRO  DESC
+   
+   SELECT * FROM PAGOC WHERE PAGOID = '11136750'
+   
+    SELECT PAGOID, T1.ITEM, T2.NOMBRE, CANTIDAD, COSTO, IMPORTE FROM PAGOD T1 INNER JOIN ITEM T2 ON T1.ITEM = T2.ITEM
+     WHERE PAGOID IN (SELECT PAGOID FROM PAGOC WHERE NUMERO = '001-1430805')
+     
+    SELECT * FROM dbo.ProcedimientoEnfermeria WHERE Descripcion LIKE '%INYECCION%'
+    

@@ -1,0 +1,26 @@
+USE [SIGSALUD]
+GO
+
+/****** Object:  Table [dbo].[NFUAS]    Script Date: 01/09/2016 12:48:37 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[NFUAS](
+	[IDSEGURO] [varchar](50) NULL,
+	[NUMFUA] [varchar](50) NULL,
+	[NFUA_ANTIGUO] [varchar](50) NULL,
+	[NOMBRES] [varchar](300) NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

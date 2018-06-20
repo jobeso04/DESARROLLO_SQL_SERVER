@@ -1,0 +1,154 @@
+/* AGREGAR RADIOLOGIA ORAL */
+
+/***
+INSERT INTO [BDPERSONAL].[dbo].[ACTIVIDADES]([NOMBRE],[ABREVIATURA],[ACTIVO],[TITULO],[SUBTITULO])
+     VALUES ('RADIOLOGIA ORAL', 'RAD', '5', 'RADIOLOGIA ORAL', 'RADIOLOGIA ORAL')
+
+INSERT INTO [BDPERSONAL].[dbo].[ACTIVIDADES]([NOMBRE],[ABREVIATURA],[ACTIVO],[TITULO],[SUBTITULO])
+     VALUES ('CONSULTORIO', 'CON', '5', 'CONSULTORIO', 'CONSULTORIO')
+     
+INSERT INTO [BDPERSONAL].[dbo].[ACTIVIDADES]([NOMBRE],[ABREVIATURA],[ACTIVO],[TITULO],[SUBTITULO])
+     VALUES ('ADMINISTRATIVO', 'ADM', '5', 'ADMINISTRATIVO', 'ADMINISTRATIVO')
+
+INSERT INTO [BDPERSONAL].[dbo].[ACTIVIDADES]([NOMBRE],[ABREVIATURA],[ACTIVO],[TITULO],[SUBTITULO])
+     VALUES ('INTERCONSULTA', 'INT', '5', 'INTERCONSULTA', 'INTERCONSULTA')
+     
+INSERT INTO [BDPERSONAL].[dbo].[ACTIVIDADES]([NOMBRE],[ABREVIATURA],[ACTIVO],[TITULO],[SUBTITULO])
+     VALUES ('VIS. MEDICA HOSPITALARIA', 'VMH', '5', 'VISITA MED.', 'VISITA MED.')
+     
+
+     
+     
+alter table [BDPERSONAL].[dbo].[ACTIVIDAD_DETALLE] add FECHA_REGISTRO DATETIME
+UPDATE [BDPERSONAL].[dbo].[ACTIVIDAD_DETALLE] SET FECHA_REGISTRO = GETDATE()
+
+INSERT INTO [BDPERSONAL].[dbo].[ACTIVIDAD_DETALLE]([ID_ACTIVIDAD],[CODIGO],[DIA],[MES],[ANIO],[ESTADO],[TURNO],[HORAS], FECHA_REGISTRO)
+values (71, '084374', 2, 9, 2017, '1', 'M', 3, getdate())
+
+
+****/
+
+use bdpersonal
+select * from dbo.ACTIVIDADES where ACTIVO = '5' order by NOMBRE asc
+
+update dbo.ACTIVIDADES set activo = '5' where id_actividad in (79, 80)
+
+
+
+
+
+select * from dbo.ACTIVIDADES where ACTIVO = 5 order by NOMBRE asc
+
+
+
+select * from dbo.ACTIVIDADES ORDER BY ABREVIATURA
+
+select activo from dbo.ACTIVIDADES group by ACTIVO
+
+update dbo.ACTIVIDADES set ACTIVO = 5 where ID_ACTIVIDAD = 75
+
+select * from dbo.ACTIVIDADES where ACTIVO = '5'  and ID_ACTIVIDAD = 78 
+
+update dbo.ACTIVIDADES set ACTIVO = '9'  where ACTIVO = '5'  and ID_ACTIVIDAD <> 78 
+
+update dbo.ACTIVIDADES set ACTIVO = '5'  where ID_ACTIVIDAD = 76
+
+
+
+
+
+select * from dbo.ACTIVIDAD_DETALLE where  CODIGO = '084374' and MES = 9 and ANIO = 2017 order by DIA asc
+
+
+update dbo.ACTIVIDAD_DETALLE set id_actividad = 75 where  CODIGO = '084374' and MES = 9 and ANIO = 2017
+
+
+
+
+
+use bdpersonal
+select * from dbo.ACTIVIDAD_DETALLE where  MES = 9 and ANIO = 2017 AND CODIGO = '084374'
+
+use bdpersonal
+select * from dbo.ACTIVIDAD_DETALLE where  CODIGO = '084374'
+
+delete from [BDPERSONAL].[dbo].[ACTIVIDAD_DETALLE] where CODIGO = '084374' 
+
+delete from [BDPERSONAL].[dbo].[ACTIVIDADES] where ID_ACTIVIDAD = 75
+
+
+
+
+
+
+select * from asistencia where IdServDepartUnid = 51 and MES = 9 and AÑO = 2017
+update asistencia set INDICADOR = '4' where IdServDepartUnid = 51 and MES = 9 and AÑO = 2017
+select CODIGO  from asistencia where IdServDepartUnid = 51 and MES = 9 and AÑO = 2017 group by CODIGO 
+
+select * from maestro where CODIGO in (select CODIGO  from asistencia where IdServDepartUnid = 51 and MES = 9 and AÑO = 2017 group by CODIGO) 
+
+
+
+
+INSERT INTO [BDPERSONAL].[dbo].[ACTIVIDAD_DETALLE]([ID_ACTIVIDAD],[CODIGO],[DIA],[MES],[ANIO],[ESTADO],[TURNO],[HORAS], FECHA_REGISTRO)
+values (71, '084374', 2, 9, 2017, '1', 'M', 4, getdate())
+
+INSERT INTO [BDPERSONAL].[dbo].[ACTIVIDAD_DETALLE]([ID_ACTIVIDAD],[CODIGO],[DIA],[MES],[ANIO],[ESTADO],[TURNO],[HORAS], FECHA_REGISTRO)
+values (71, '084374', 5, 9, 2017, '1', 'M', 4, getdate())
+
+INSERT INTO [BDPERSONAL].[dbo].[ACTIVIDAD_DETALLE]([ID_ACTIVIDAD],[CODIGO],[DIA],[MES],[ANIO],[ESTADO],[TURNO],[HORAS], FECHA_REGISTRO)
+values (71, '084374', 7, 9, 2017, '1', 'M', 4, getdate())
+
+INSERT INTO [BDPERSONAL].[dbo].[ACTIVIDAD_DETALLE]([ID_ACTIVIDAD],[CODIGO],[DIA],[MES],[ANIO],[ESTADO],[TURNO],[HORAS], FECHA_REGISTRO)
+values (71, '084374', 9, 9, 2017, '1', 'M', 4, getdate())
+
+INSERT INTO [BDPERSONAL].[dbo].[ACTIVIDAD_DETALLE]([ID_ACTIVIDAD],[CODIGO],[DIA],[MES],[ANIO],[ESTADO],[TURNO],[HORAS], FECHA_REGISTRO)
+values (71, '084374', 12, 9, 2017, '1', 'M', 4, getdate())
+
+
+INSERT INTO [BDPERSONAL].[dbo].[ACTIVIDAD_DETALLE]([ID_ACTIVIDAD],[CODIGO],[DIA],[MES],[ANIO],[ESTADO],[TURNO],[HORAS], FECHA_REGISTRO)
+values (71, '084374', 14, 9, 2017, '1', 'M', 4, getdate())
+
+
+INSERT INTO [BDPERSONAL].[dbo].[ACTIVIDAD_DETALLE]([ID_ACTIVIDAD],[CODIGO],[DIA],[MES],[ANIO],[ESTADO],[TURNO],[HORAS], FECHA_REGISTRO)
+values (71, '084374', 16, 9, 2017, '1', 'M', 4, getdate())
+
+INSERT INTO [BDPERSONAL].[dbo].[ACTIVIDAD_DETALLE]([ID_ACTIVIDAD],[CODIGO],[DIA],[MES],[ANIO],[ESTADO],[TURNO],[HORAS], FECHA_REGISTRO)
+values (71, '084374', 19, 9, 2017, '1', 'M', 4, getdate())
+
+
+INSERT INTO [BDPERSONAL].[dbo].[ACTIVIDAD_DETALLE]([ID_ACTIVIDAD],[CODIGO],[DIA],[MES],[ANIO],[ESTADO],[TURNO],[HORAS], FECHA_REGISTRO)
+values (71, '084374', 21, 9, 2017, '1', 'M', 4, getdate())
+
+INSERT INTO [BDPERSONAL].[dbo].[ACTIVIDAD_DETALLE]([ID_ACTIVIDAD],[CODIGO],[DIA],[MES],[ANIO],[ESTADO],[TURNO],[HORAS], FECHA_REGISTRO)
+values (71, '084374', 23, 9, 2017, '1', 'M', 4, getdate())
+
+
+INSERT INTO [BDPERSONAL].[dbo].[ACTIVIDAD_DETALLE]([ID_ACTIVIDAD],[CODIGO],[DIA],[MES],[ANIO],[ESTADO],[TURNO],[HORAS], FECHA_REGISTRO)
+values (71, '084374', 26, 9, 2017, '1', 'M', 4, getdate())
+
+
+INSERT INTO [BDPERSONAL].[dbo].[ACTIVIDAD_DETALLE]([ID_ACTIVIDAD],[CODIGO],[DIA],[MES],[ANIO],[ESTADO],[TURNO],[HORAS], FECHA_REGISTRO)
+values (71, '084374', 28, 9, 2017, '1', 'M', 4, getdate())
+
+
+INSERT INTO [BDPERSONAL].[dbo].[ACTIVIDAD_DETALLE]([ID_ACTIVIDAD],[CODIGO],[DIA],[MES],[ANIO],[ESTADO],[TURNO],[HORAS], FECHA_REGISTRO)
+values (71, '084374', 30, 9, 2017, '1', 'M', 4, getdate())
+
+
+
+select * from usuario_web 
+
+use SIGSALUD
+select * from dbo.ACCESO_MODULO where  DNI = '15377449' 
+
+select * from dbo.ACCESO_MENU where DNI = '15377449' 
+
+select * from dbo.ACCESO_SUBMENU where DNI = '15377449' 
+
+
+USE SIGSALUD
+select * from dbo.ACCESO_SUBMENU where id_submenu = '57807489238365537794' and DNI = '15377449' 
+
+
+11020212552901091031
